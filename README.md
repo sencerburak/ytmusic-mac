@@ -8,10 +8,10 @@ No windows or linux bulls**t is provided. This is a strictly Mac app
 
 ## Download
 
-[Apple Silicon](https://github.com/sencerb88/ytmusic-mac/releases/download/untagged-8faad409f2b1e29d4e62/Youtube.Music-0.0.2-arm64.dmg) 🐎 👌
+[Apple Silicon](https://github.com/sencerb88/ytmusic-mac/releases/download/untagged-6627498244c8d71e8a1d/Youtube.Music-0.0.2-arm64.dmg) 🐎 👌
 
 
-[Intel](https://github.com/sencerb88/ytmusic-mac/releases/download/untagged-8faad409f2b1e29d4e62/Youtube.Music-0.0.2-x64.dmg) 🐌🐌🐌
+[Intel](https://github.com/sencerb88/ytmusic-mac/releases/download/untagged-6627498244c8d71e8a1d/Youtube.Music-0.0.2-x64.dmg) 🐌🐌🐌
 
 Windows 🖕🖕🖕
 
