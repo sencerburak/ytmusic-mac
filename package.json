@@ -1,0 +1,48 @@
+{
+  "name": "ytmusic-mac",
+  "productName": "ytmusic-mac",
+  "version": "0.0.1",
+  "description": "Menubar app for Youtube Music",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "start": "electron-forge start",
+    "package": "electron-forge package --arch arm64,x64",
+    "make": " electron-forge make --arch arm64,x64",
+    "publish": "electron-forge publish --arch arm64,x64",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [
+    "youtube",
+    "music",
+    "mac"
+  ],
+  "author": {
+    "name": "Sencer Burak Okumuş",
+    "email": "sencerburak@okumuş.dev"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-context-menu": "^3.6.0",
+    "menubar": "^9.2.3",
+    "update-electron-app": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sencerb88/ytmusic-mac"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-dmg": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "@electron-forge/publisher-github": "^6.0.4",
+    "@types/electron": "^1.6.10",
+    "dotenv": "^16.0.3",
+    "electron": "^21.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "typescript": "^4.9.4"
+  }
+}

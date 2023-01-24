@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Youtube Music</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="container">
+    <div class="page app">
+    <webview id="webview" src="https://music.youtube.com" autosize="on" >
+   </webview>
+  </div>
+    <script>
+    const webview = document.getElementById('webview');
+    webview.addEventListener('dom-ready', function() {
+
+    });
+
+    </script>
+  </body>
+</html>
