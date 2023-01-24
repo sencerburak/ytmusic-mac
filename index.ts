@@ -1,18 +1,20 @@
-require("update-electron-app")();
 
-// import('menubar')
+import('update-electron-app')
+
 import menubar = require("menubar");
+import path = require("path");
 
-const path = require("path");
-const {
+import {
   app,
   nativeImage,
   Tray,
   Menu,
   globalShortcut,
   shell,
-} = require("electron");
-const contextMenu = require("electron-context-menu");
+  MenuItem,
+} from "electron";
+
+const contextMenu = import("electron-context-menu");
 
 const image = nativeImage.createFromPath(
   path.join(__dirname, `images/iconTemplate.png`)
@@ -24,7 +26,7 @@ app.on("ready", () => {
   const mb =  menubar.menubar({
     browserWindow: {
       icon: image,
-      transparent: path.join(__dirname, `images/iconApp.png`),
+      transparent: true,
       webPreferences: {
         webviewTag: true,
         // nativeWindowOpen: true,
@@ -49,7 +51,7 @@ app.on("ready", () => {
       app.dock.hide();
     }
 
-    const contextMenuTemplate: any = [
+    const contextMenuTemplate: (Electron.MenuItemConstructorOptions | MenuItem)[] = [
       // add links to github repo and vince's twitter
       {
         label: "Quit",
@@ -108,7 +110,7 @@ app.on("ready", () => {
     console.log("Menubar app is ready.");
   });
 
-  app.on("web-contents-created", (e, contents) => {
+  app.on("web-contents-created", async (e, contents) => {
     if (contents.getType() == "webview") {
       // open link with external browser in webview
       contents.on("new-window", (e, url) => {
@@ -116,7 +118,9 @@ app.on("ready", () => {
         shell.openExternal(url);
       });
       // set context menu in webview
-      contextMenu({
+      (await
+        // set context menu in webview
+        contextMenu)({
         window: contents,
       });
 
