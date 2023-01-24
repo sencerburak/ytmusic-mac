@@ -27,7 +27,7 @@ jobs:
 
   publish:
     name: Build and publish
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     needs: version
 
     steps:
@@ -40,17 +40,14 @@ jobs:
           node-version: 18.x
 
       - name: Install dev dependencies
-        working-directory: /home/runner/work/ytmusic-mac/ytmusic-mac
         run: npm install
 
       - name: Build packages
-        working-directory: /home/runner/work/ytmusic-mac/ytmusic-mac
         run: npm run build
 
       - name: Publish
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-        working-directory: /home/runner/work/ytmusic-mac/ytmusic-mac
         run: |
           npm version ${{ steps.version.outputs.version }}
           npm run publish
