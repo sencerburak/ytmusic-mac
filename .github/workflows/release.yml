@@ -7,6 +7,8 @@ on:
 jobs:
   version:
     runs-on: ubuntu-latest
+    outputs:
+      nextVersion: ${{ steps.version.outputs.version }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -49,5 +51,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
-          npm version ${{ steps.version.outputs.version }}
+          npm version ${{ needs.version.outputs.nextVersion }}
           npm run publish

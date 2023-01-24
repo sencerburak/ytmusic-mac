@@ -1,7 +1,7 @@
 {
   "name": "ytmusic-mac",
   "productName": "ytmusic-mac",
-  "version": "0.0.2",
+  "version": "0.0.1-main.17.bb8239e",
   "description": "Menubar app for Youtube Music",
   "main": "index.js",
   "scripts": {
