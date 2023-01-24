@@ -13,7 +13,12 @@
     <script>
     const webview = document.getElementById('webview');
     webview.addEventListener('dom-ready', function() {
-
+      // hide cast button
+      webview.insertCSS(`
+        [class*="cast-button"] {
+          display: none !important;
+        }
+      `)
     });
 
     </script>
