@@ -1,4 +1,3 @@
-const { parsed } = require("dotenv").config();
 module.exports = {
   packagerConfig: {
     name: "Youtube Music",

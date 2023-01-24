@@ -15,21 +15,21 @@ jobs:
         with:
           token: ${{ github.token }}
 
-  # prettier:
-  #   name: Coding Standards Compliance
-  #   runs-on: staging-05c-2gb
+  lint:
+    name: Coding Standards Compliance
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Check-out the repository
-  #       uses: actions/checkout@v3
+    steps:
+      - name: Check-out the repository
+        uses: actions/checkout@v3
 
-  #     - name: Set up Node.js 16.x
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16.x
+      - name: Set up Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
 
-  #     - name: Install dev dependencies
-  #       run: npm install --only=dev
+      - name: Install dev dependencies
+        run: npm install --only=dev
 
-  #     - name: Run eslint
-  #       run: npm run lint
+      - name: Run eslint
+        run: npm run lint
