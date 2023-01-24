@@ -1,0 +1,35 @@
+# .github/workflows/quality-checks.yml
+name: Quality Checks
+on:
+  pull_request:
+    types: [edited, opened, synchronize, reopened]
+
+jobs:
+  commit-message:
+    name: Conventional Commit Message Compliance
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Commisery
+        uses: tomtom-international/commisery-action@v2
+        with:
+          token: ${{ github.token }}
+
+  # prettier:
+  #   name: Coding Standards Compliance
+  #   runs-on: staging-05c-2gb
+
+  #   steps:
+  #     - name: Check-out the repository
+  #       uses: actions/checkout@v3
+
+  #     - name: Set up Node.js 16.x
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16.x
+
+  #     - name: Install dev dependencies
+  #       run: npm install --only=dev
+
+  #     - name: Run eslint
+  #       run: npm run lint
