@@ -11,7 +11,7 @@ jobs:
       nextVersion: ${{ steps.version.outputs.version }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}   # checkout the correct branch name
           fetch-depth: 0                # fetch the whole repo history
@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: Check-out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js 18.x
         uses: actions/setup-node@v3
